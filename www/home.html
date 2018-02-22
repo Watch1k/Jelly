@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta name="format-detection" content="telephone=no">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link href="static/css/index.css" rel="stylesheet">
+    <link rel="icon" href="static/favicon.ico">
+  </head>
+  <body>
+    <!-- SVG-->
+    <div class="svg-container" style="position: absolute; width: 0; height: 0; overflow: hidden;">
+      <svg xmlns="http://www.w3.org/2000/svg">
+        <symbol id="icon-vintage-logo" viewBox="0 0 84.1 115.5">
+          <style>
+            .st0 {
+              fill: #000
+            }
+          </style>
+          <path d="M21.7 0H0l5.1 19.8h21.5z" />
+          <path d="M63.2 0L33.7 115.5h21L84.1 0z" />
+        </symbol>
+      </svg>
+    </div>
+    <!-- picture element HTML5 shiv-->
+    <script>
+      document.createElement('picture');
+    </script>
+    <!-- Header-->
+    <header></header>
+    <!-- Main content-->
+    <main class="content" data-page="home">
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="300" style="display: none">
+        <path id="pentagon-path" d="m200 97.218 108.07 78.524-41.28 127.04h-133.58l-41.281-127.04z" /> </svg>
+      <div class="jelly-container">
+        <!-- Canvas to draw the jelly pentagon -->
+        <canvas class="jelly-canvas"></canvas>
+        <!-- Text in the centroid of the jelly pentagon -->
+      </div>
+    </main>
+    <!-- Footer-->
+    <footer></footer>
+    <!-- Scripts-->
+    <script src="static/js/jelly.js"></script>
+    <script src="static/js/index.js"></script>
+  </body>
+</html>
