@@ -411,6 +411,30 @@
                         left = o.imageCentroid ? o.centroidPoint.x - width / 2 : 0;
                         top = o.imageCentroid ? o.centroidPoint.y - height / 2 : 0;
                         this.ctx.drawImage(o.image, left, top, width, height);
+	
+	                    this.ctx.globalCompositeOperation='source-atop';
+	                    this.ctx.shadowOffsetX = 0;
+	                    this.ctx.shadowOffsetY = 0;
+	                    this.ctx.shadowBlur = 15;
+	                    this.ctx.shadowColor = 'rgba(255,255,255,0.5)';
+	                    this.ctx.beginPath();
+	                    this.ctx.moveTo(p[0].x, p[0].y);
+	                    var i2, p0, p1, len = p.length;
+	                    for (i2 = 0; i2 <= len; i2++) {
+		                    p0 = p[i2 >= len ? i2 - len : i2];
+		                    p1 = p[i2 + 1 >= len ? i2 + 1 - len : i2 + 1];
+		                    this.ctx.quadraticCurveTo(p0.x, p0.y, (p0.x + p1.x) * 0.5, (p0.y + p1.y) * 0.5);
+	                    }
+	                    this.ctx.strokeStyle = 'rgba(51, 39, 145, 1)';
+	                    this.ctx.stroke();
+	                    this.ctx.shadowBlur = 25;
+	                    this.ctx.shadowColor = 'rgba(255,255,255,0.75)';
+	                    this.ctx.stroke();
+	                    this.ctx.shadowBlur = 35;
+	                    this.ctx.stroke();
+	                    this.ctx.closePath();
+	
+	                    this.ctx.globalCompositeOperation='source-over';
                     } else {
                        // this.ctx.fillStyle = o.color;
 	                    //this.ctx.fill();
@@ -435,32 +459,30 @@
                 this.ctx.quadraticCurveTo(p0.x, p0.y, (p0.x + p1.x) * 0.5, (p0.y + p1.y) * 0.5);
             }
             this.ctx.closePath();
-            this.ctx.fillStyle = grd;
-	          this.ctx.fill();
 	
-	        this.ctx.globalCompositeOperation='source-atop';
-	        this.ctx.shadowOffsetX = 0;
-	        this.ctx.shadowOffsetY = 0;
-	        this.ctx.shadowBlur = 10;
-	        this.ctx.shadowColor = 'rgba(255,255,255,0.5)';
-	        this.ctx.beginPath();
-	        this.ctx.moveTo(p[0].x, p[0].y);
-	        var i, p0, p1, len = p.length;
-	        for (i = 0; i <= len; i++) {
-		        p0 = p[i >= len ? i - len : i];
-		        p1 = p[i + 1 >= len ? i + 1 - len : i + 1];
-		        this.ctx.quadraticCurveTo(p0.x, p0.y, (p0.x + p1.x) * 0.5, (p0.y + p1.y) * 0.5);
-	        }
-	        this.ctx.strokeStyle = 'rgba(51, 39, 145, 1)';
-	        this.ctx.stroke();
-	        this.ctx.shadowBlur = 25;
-	        this.ctx.shadowColor = 'rgba(255,255,255,1)';
-	        this.ctx.stroke();
-	        this.ctx.shadowBlur = 35;
-	        this.ctx.stroke();
-	        this.ctx.closePath();
-
-	        this.ctx.globalCompositeOperation='source-over';
+	        //this.ctx.globalCompositeOperation='source-atop';
+	        //this.ctx.shadowOffsetX = 0;
+	        //this.ctx.shadowOffsetY = 0;
+	        //this.ctx.shadowBlur = 10;
+	        //this.ctx.shadowColor = 'rgba(255,255,255,0.5)';
+	        //this.ctx.beginPath();
+	        //this.ctx.moveTo(p[0].x, p[0].y);
+	        //var i, p0, p1, len = p.length;
+	        //for (i = 0; i <= len; i++) {
+		       // p0 = p[i >= len ? i - len : i];
+		       // p1 = p[i + 1 >= len ? i + 1 - len : i + 1];
+		       // this.ctx.quadraticCurveTo(p0.x, p0.y, (p0.x + p1.x) * 0.5, (p0.y + p1.y) * 0.5);
+	        //}
+	        //this.ctx.strokeStyle = 'rgba(51, 39, 145, 1)';
+	        //this.ctx.stroke();
+	        //this.ctx.shadowBlur = 25;
+	        //this.ctx.shadowColor = 'rgba(255,255,255,1)';
+	        //this.ctx.stroke();
+	        //this.ctx.shadowBlur = 35;
+	        //this.ctx.stroke();
+	        //this.ctx.closePath();
+	        //
+	        //this.ctx.globalCompositeOperation='source-over';
         },
 
         drawPoints: function (p, o) {

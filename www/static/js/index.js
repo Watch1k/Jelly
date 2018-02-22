@@ -318,10 +318,21 @@ var Home = function () {
 				//centroid: '.centroid-text'   // Element to move accordingly with the centroid of the shape
 				// debug: true               // Uncomment this to see the points
 			};
+			var options2 = {
+				paths: '#pentagon-path', // Shape we want to draw
+				pointsNumber: 10, // Number of points
+				maxDistance: 40, // Max distance among points
+				color: '#5C1523',
+				intensity: 0.9,
+				fastness: 1 / 10,
+				image: 'static/img/gradient.png'
+				//centroid: '.centroid-text'   // Element to move accordingly with the centroid of the shape
+				// debug: true               // Uncomment this to see the points
+			};
 
 			/* Initializing jelly */
 
-			var jelly = new Jelly('.jelly-canvas', options);
+			var jelly = new Jelly('.jelly-canvas', options2);
 		}
 	}]);
 
