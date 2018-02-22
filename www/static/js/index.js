@@ -311,7 +311,7 @@ var Home = function () {
 			var options = {
 				paths: '#pentagon-path', // Shape we want to draw
 				pointsNumber: 10, // Number of points
-				maxDistance: 70, // Max distance among points
+				maxDistance: 40, // Max distance among points
 				color: '#5C1523',
 				intensity: 0.9,
 				fastness: 1 / 10
