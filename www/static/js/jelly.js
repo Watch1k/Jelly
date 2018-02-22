@@ -451,7 +451,7 @@
 		        p1 = p[i + 1 >= len ? i + 1 - len : i + 1];
 		        this.ctx.quadraticCurveTo(p0.x, p0.y, (p0.x + p1.x) * 0.5, (p0.y + p1.y) * 0.5);
 	        }
-	        this.ctx.strokeStyle = 'rgba(58, 46, 100, 1)';
+	        this.ctx.strokeStyle = 'rgba(51, 39, 145, 1)';
 	        this.ctx.stroke();
 	        this.ctx.shadowBlur = 25;
 	        this.ctx.shadowColor = 'rgba(255,255,255,1)';
